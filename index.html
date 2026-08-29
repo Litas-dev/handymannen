@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handymannen Jocys – Håndverker i Oslo, Viken & Innlandet</title>
+  <meta name="description" content="Handymannen Jocys har utført 108 jobber på Mittanbud i Oslo, Viken og Innlandet, med et snitt på 4.8 av 5 stjerner. Be om tilbud i dag." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Handymannen Jocys – Håndverker" />
+  <meta property="og:description" content="Topprangert håndverker. 108 jobber utført, 4.8 av 5 stjerner (78 evalueringer). Oslo, Viken & Innlandet." />
+  <meta property="og:image" content="img/handymannen-logo.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">
+        <img class="nav__logo" src="img/handymannen-mark.png" alt="Handymannen" />
+        <span class="nav__brandtext">
+          <strong>Handymannen</strong>
+          <small>Jocys</small>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Hovedmeny">
+        <a href="#om">Om</a>
+        <a href="#tjenester">Tjenester</a>
+        <a href="#galleri">Galleri</a>
+        <a href="#anmeldelser">Anmeldelser</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#kontakt" class="nav__cta">Be om tilbud</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Åpne meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="hex hex--1">🔨</span>
+      <span class="hex hex--2">🪚</span>
+      <span class="hex hex--3">🛠️</span>
+      <span class="hex hex--4">📐</span>
+      <span class="hex hex--5">🏠</span>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__content" data-reveal="up">
+        <div class="hero__topline">
+          <span class="badge-top">
+            <span class="badge-top__star">★</span> Topprangert håndverker
+          </span>
+          <span class="hero__insta">@handyoslo</span>
+        </div>
+
+        <h1 class="hero__title">
+          Fra <span class="accent">idè</span> til <span class="accent">ferdig</span> prosjekt.
+        </h1>
+
+        <p class="hero__sub">
+          Handymannen Jocys er din pålitelige håndverker i
+          <strong>Oslo</strong>, <strong>Viken</strong> og <strong>Innlandet</strong> – med over
+          <strong>108 utførte jobber</strong> og en snittscore på <strong>4.8 av 5</strong>.
+        </p>
+
+        <!-- Topprangert "gadget" -->
+        <div class="topp" id="topp">
+          <div class="topp__disc">
+            <div class="topp__center">
+              <strong>4.8</strong>
+              <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+              <small>78 evalueringer</small>
+            </div>
+          </div>
+          <div class="topp__txt">
+            <span class="topp__ribbon">🏆 Topprangert</span>
+            <p>Snittscore på evalueringer høyere enn <strong>4.8</strong>. Rangert blant de beste på Mittanbud.</p>
+          </div>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#kontakt" class="btn btn--primary">Be om tilbud →</a>
+          <a href="#tjenester" class="btn btn--ghost">Se tjenester</a>
+        </div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="hero__media" data-reveal="zoom">
+        <div class="hero__card">
+          <img src="img/handymannen-logo.jpg" alt="Handymannen Jocys" class="hero__img" />
+          <div class="hero__cardtag">
+            <span class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+            <strong>Handymannen Jocys</strong>
+            <small>Bygg • Tak • Oppussing</small>
+          </div>
+        </div>
+        <div class="hero__float hero__float--1" data-reveal="up">
+          <strong>108</strong><small>jobber vunnet</small>
+        </div>
+        <div class="hero__float hero__float--2" data-reveal="up">
+          <strong>10+</strong><small>års erfaring</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section class="stats" id="stats">
+    <div class="stats__item" data-reveal="up">
+      <strong class="count" data-count="108">0</strong>
+      <span>Jobber utført</span>
+    </div>
+    <div class="stats__item" data-reveal="up">
+      <strong class="count" data-count="4.8" data-decimal="1">0</strong>
+      <span>Snittscore (5)</span>
+    </div>
+    <div class="stats__item" data-reveal="up">
+      <strong class="count" data-count="78">0</strong>
+      <span>Evalueringer</span>
+    </div>
+    <div class="stats__item" data-reveal="up">
+      <strong class="count" data-count="11">0</strong>
+      <span>Referanseprosjekter</span>
+    </div>
+  </section>
+
+  <!-- ===================== OM ===================== -->
+  <section class="section about" id="om">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Om meg</span>
+      <h2>Håndverk med omtanke, fra start til slutt</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__text" data-reveal="right">
+        <p>
+          <strong>Handymannen Jocys</strong> er en erfaren og topprangert håndverker som har
+          utført <strong>108 jobber</strong> gjennom Mittanbud – med en imponerende snittscore på
+          <strong>4.8 av 5 stjerner</strong>. Jeg tar meg av alt fra små monteringsoppdrag til
+          større renoveringer.
+        </p>
+        <p>
+          Med base i <strong>Kløfta</strong> og <strong>@handyoslo</strong> på Instagram, dekker jeg
+          hele Oslo-regionen, Viken og store deler av Innlandet. Kunder beskriver meg som
+          <em>hyggelig, pålitelig og dyktig</em> i arbeidet mitt.
+        </p>
+
+        <ul class="about__list">
+          <li>✔ Kvalitetssikret arbeid til avtalt tid</li>
+          <li>✔ God kommunikasjon og god kundeservice</li>
+          <li>✔ Bred erfaring – fra tak til kjøkken</li>
+          <li>✔ Topprangert på Mittanbud</li>
+        </ul>
+
+        <a href="#kontakt" class="btn btn--primary">Kom i kontakt</a>
+      </div>
+
+      <div class="about__visual" data-reveal="left">
+        <!-- Bildeplass – erstatt med eget bilde av arbeid -->
+        <div class="placeholder">
+          <span class="placeholder__icon">🖼️</span>
+          <span class="placeholder__label">Sett inn bilde av arbeidet her</span>
+        </div>
+        <div class="about__badge">
+          <span class="about__badge-num">4.8★</span>
+          <span>Topprangert<br />på Mittanbud</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TJENESTER ===================== -->
+  <section class="section services" id="tjenester">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Tjenester</span>
+      <h2>Alt i ett – jeg fikser det meste</h2>
+      <p>Velg mellom et bredt spekter av håndverkertjenester for hus og hjem.</p>
+    </div>
+
+    <div class="services__grid">
+      <div class="svc-group" data-reveal="up">
+        <h3 class="svc-group__title">🏗️ Bygg & Renovering</h3>
+        <div class="svc-group__chips">
+          <span class="chip">Totalrenovering av bolig</span>
+          <span class="chip">Delrenovering</span>
+          <span class="chip">Tilbygg</span>
+          <span class="chip">Pusse opp kjeller</span>
+          <span class="chip">Pusse opp loft</span>
+          <span class="chip">Omgjøring av bolig</span>
+          <span class="chip">Bygge garasje</span>
+          <span class="chip">Sanering</span>
+        </div>
+      </div>
+
+      <div class="svc-group" data-reveal="up">
+        <h3 class="svc-group__title">🏠 Tak & Utvendig</h3>
+        <div class="svc-group__chips">
+          <span class="chip">Legge tak</span>
+          <span class="chip">Taktekker</span>
+          <span class="chip">Pipehatt og beslag</span>
+          <span class="chip">Vindskier</span>
+          <span class="chip">Kledning</span>
+          <span class="chip">Male hus</span>
+          <span class="chip">Vinterhage</span>
+          <span class="chip">Veranda og balkong</span>
+          <span class="chip">Terrasse og platting</span>
+          <span class="chip">Gjerde</span>
+          <span class="chip">Uthus</span>
+          <span class="chip">Brygge</span>
+        </div>
+      </div>
+
+      <div class="svc-group" data-reveal="up">
+        <h3 class="svc-group__title">🪛 Innredning & Montering</h3>
+        <div class="svc-group__chips">
+          <span class="chip">Kjøkkenmontering</span>
+          <span class="chip">Gulvsliping</span>
+          <span class="chip">Tregulv</span>
+          <span class="chip">Gulvbelegg</span>
+          <span class="chip">Pigging av gulv</span>
+          <span class="chip">Våtromsbelegg</span>
+          <span class="chip">Tretrapp</span>
+          <span class="chip">Garasjeport</span>
+          <span class="chip">Glassarbeid</span>
+        </div>
+      </div>
+
+      <div class="svc-group" data-reveal="up">
+        <h3 class="svc-group__title">🛠️ Spesial & Fag</h3>
+        <div class="svc-group__chips">
+          <span class="chip">Snekker</span>
+          <span class="chip">Rørlegger</span>
+          <span class="chip">Isolering</span>
+          <span class="chip">Varmetermografi</span>
+          <span class="chip">Lafting</span>
+          <span class="chip">Ferdighus og ferdighytte</span>
+          <span class="chip">Vindu og dør</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERI ===================== -->
+  <section class="section gallery" id="galleri">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Galleri</span>
+      <h2>Se resultatene mine</h2>
+      <p><em>Disse er bildeplasser – erstatt dem med egne bilder fra prosjektene dine.</em></p>
+    </div>
+
+    <div class="gallery__grid">
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-terrasse.svg" alt="Terrasse og platting" loading="lazy" />
+        <figcaption>Terrasse & platting</figcaption>
+      </figure>
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-tak.svg" alt="Nytt tak" loading="lazy" />
+        <figcaption>Nytt tak</figcaption>
+      </figure>
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-kjokken.svg" alt="Kjøkkenmontering" loading="lazy" />
+        <figcaption>Kjøkkenmontering</figcaption>
+      </figure>
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-vinduer.svg" alt="Vinduer og dører" loading="lazy" />
+        <figcaption>Vinduer & dører</figcaption>
+      </figure>
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-bad.svg" alt="Bad og våtrom" loading="lazy" />
+        <figcaption>Bad & våtrom</figcaption>
+      </figure>
+      <figure class="gal" data-reveal="zoom">
+        <img src="img/gal-uthus.svg" alt="Uthus og garasje" loading="lazy" />
+        <figcaption>Uthus & garasje</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== OMRÅDER ===================== -->
+  <section class="section areas" id="omrader">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Områder</span>
+      <h2>Der jeg jobber</h2>
+      <p>Jeg opererer i Oslo, Viken og store deler av Innlandet.</p>
+    </div>
+
+    <div class="areas__marquee" aria-hidden="true">
+      <div class="areas__track">
+        <span class="area">Oslo kommune</span><span class="area">Vestby</span>
+        <span class="area">Nordre Follo</span><span class="area">Ås</span>
+        <span class="area">Frogn</span><span class="area">Nesodden</span>
+        <span class="area">Bærum</span><span class="area">Asker</span>
+        <span class="area">Lillestrøm</span><span class="area">Rælingen</span>
+        <span class="area">Enebakk</span><span class="area">Lørenskog</span>
+        <span class="area">Nittedal</span><span class="area">Ullensaker</span>
+        <span class="area">Eidsvoll</span><span class="area">Nannestad</span>
+        <span class="area">Kongsvinger</span><span class="area">Hamar</span>
+        <span class="area">Lillehammer</span><span class="area">Gjøvik</span>
+        <span class="area">Ringsaker</span><span class="area">Elverum</span>
+        <span class="area">Stange</span><span class="area">Tynset</span>
+      </div>
+      <div class="areas__track" aria-hidden="true">
+        <span class="area">Oslo kommune</span><span class="area">Vestby</span>
+        <span class="area">Nordre Follo</span><span class="area">Ås</span>
+        <span class="area">Frogn</span><span class="area">Nesodden</span>
+        <span class="area">Bærum</span><span class="area">Asker</span>
+        <span class="area">Lillestrøm</span><span class="area">Rælingen</span>
+        <span class="area">Enebakk</span><span class="area">Lørenskog</span>
+        <span class="area">Nittedal</span><span class="area">Ullensaker</span>
+        <span class="area">Eidsvoll</span><span class="area">Nannestad</span>
+        <span class="area">Kongsvinger</span><span class="area">Hamar</span>
+        <span class="area">Lillehammer</span><span class="area">Gjøvik</span>
+        <span class="area">Ringsaker</span><span class="area">Elverum</span>
+        <span class="area">Stange</span><span class="area">Tynset</span>
+      </div>
+    </div>
+
+    <p class="areas__more" data-reveal="up">…og mange flere kommuner i Innlandet.</p>
+  </section>
+
+  <!-- ===================== ANMELDELSER ===================== -->
+  <section class="section reviews" id="anmeldelser">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Anmeldelser</span>
+      <h2>Det sier kundene mine</h2>
+    </div>
+
+    <div class="reviews__grid">
+      <!-- Oppsummering -->
+      <div class="rev-sum" data-reveal="left">
+        <div class="rev-sum__score">
+          <strong>4.8</strong>
+          <span class="stars stars--lg"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+          <small>78 evalueringer</small>
+        </div>
+        <div class="rev-bars">
+          <div class="bar"><span class="bar__lbl">5</span><span class="bar__trk"><i style="--w:88%"></i></span><span class="bar__n">69</span></div>
+          <div class="bar"><span class="bar__lbl">4</span><span class="bar__trk"><i style="--w:9%"></i></span><span class="bar__n">7</span></div>
+          <div class="bar"><span class="bar__lbl">3</span><span class="bar__trk"><i style="--w:0%"></i></span><span class="bar__n">0</span></div>
+          <div class="bar"><span class="bar__lbl">2</span><span class="bar__trk"><i style="--w:3%"></i></span><span class="bar__n">2</span></div>
+          <div class="bar"><span class="bar__lbl">1</span><span class="bar__trk"><i style="--w:0%"></i></span><span class="bar__n">0</span></div>
+        </div>
+      </div>
+
+      <!-- Anmeldelseskort -->
+      <div class="rev-cards">
+        <article class="rev" data-reveal="right">
+          <div class="rev__head">
+            <span class="rev__avatar">E</span>
+            <div>
+              <strong>Ellen</strong>
+              <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+            </div>
+            <small>21. juli 2026</small>
+          </div>
+          <h4>Flytte kjøkken og bygge lettvegg</h4>
+          <p>“Veldig effektivt, kvalitetssikkert arbeid, god kundeservice og god kommunikasjon. Anbefaler alle denne håndverkeren!”</p>
+        </article>
+
+        <article class="rev" data-reveal="right">
+          <div class="rev__head">
+            <span class="rev__avatar">L</span>
+            <div>
+              <strong>Lars</strong>
+              <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+            </div>
+            <small>25. juni 2026</small>
+          </div>
+          <h4>Montering av rekkverk i tre</h4>
+          <p>“Veldig god kvalitet og raskt utført oppdrag.”</p>
+        </article>
+
+        <article class="rev" data-reveal="right">
+          <div class="rev__head">
+            <span class="rev__avatar">M</span>
+            <div>
+              <strong>Mehdi</strong>
+              <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+            </div>
+            <small>1. august 2026</small>
+          </div>
+          <h4>Montering av dusjdører</h4>
+          <p>“Profesjonell og rask utførelse – alt ble gjort som avtalt.”</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KONTAKT ===================== -->
+  <section class="section contact" id="kontakt">
+    <div class="section__head" data-reveal="up">
+      <span class="eyebrow">Kontakt</span>
+      <h2>Be om tilbud – helt uforpliktende</h2>
+      <p>Send en e-post direkte – jeg svarer raskt.</p>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__card" data-reveal="up">
+        <h3>Kontaktinfo</h3>
+        <ul class="contact__list">
+          <li>
+            <span class="contact__icon">✉️</span>
+            <div><strong>E-post</strong><a href="mailto:a.jocys@yahoo.com">a.jocys@yahoo.com</a></div>
+          </li>
+          <li>
+            <span class="contact__icon">📞</span>
+            <div><strong>Telefon</strong><a href="tel:+4746374477">+47 46 37 44 77</a></div>
+          </li>
+          <li>
+            <span class="contact__icon">📷</span>
+            <div><strong>Instagram</strong><a href="https://instagram.com/handyoslo" target="_blank" rel="noopener">@handyoslo</a></div>
+          </li>
+          <li>
+            <span class="contact__icon">📍</span>
+            <div><strong>Adresse</strong><span>Tveiterhellinga 1, 2040 Kløfta</span></div>
+          </li>
+          <li>
+            <span class="contact__icon">🏢</span>
+            <div><strong>Org. nr.</strong><span>921 358 172</span></div>
+          </li>
+        </ul>
+        <div class="contact__hint">
+          <span class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
+          <span>Topprangert på Mittanbud – 4.8 av 5</span>
+        </div>
+      </div>
+
+      <!-- E-post – åpner e-postklienten direkte (mailto) -->
+      <div class="contact__form" data-reveal="up" id="emailCard">
+        <div class="email__ico" aria-hidden="true">✉️</div>
+        <h3>Send meg en e-post</h3>
+        <p class="email__lead">
+          Trykk på knappen nedenfor – da åpnes e-postklienten din med riktig adresse
+          ferdig utfylt. Ingen skjema, ingen venting.
+        </p>
+        <a href="mailto:a.jocys@yahoo.com?subject=Be%20om%20tilbud%20%E2%80%93%20Handymannen%20Jocys" class="btn btn--primary btn--block">
+          ✉️ a.jocys@yahoo.com
+        </a>
+        <p class="form__note">Du kan også kopiere adressen: a.jocys@yahoo.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="img/handymannen-logo.png" alt="Handymannen – Ingen jobb er for liten" />
+      </div>
+      <nav class="footer__links" aria-label="Bunntekst">
+        <a href="#om">Om</a>
+        <a href="#tjenester">Tjenester</a>
+        <a href="#galleri">Galleri</a>
+        <a href="#anmeldelser">Anmeldelser</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <p class="footer__copy">© <span id="year"></span> Handymannen Jocys · Org. nr. 921 358 172</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
