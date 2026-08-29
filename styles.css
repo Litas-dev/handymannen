@@ -29,7 +29,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+html { scroll-behavior: smooth; scroll-padding-top: 78px; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
@@ -381,6 +381,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
    ============================================================ */
 @media (max-width: 900px) {
   .hero__inner, .about__grid, .reviews__grid, .contact__grid { grid-template-columns: 1fr; }
+  .hero__inner > * { min-width: 0; }
+  .hero__media, .hero__card, .hero__actions, .topp { min-width: 0; }
   .hero__media { order: -1; } /* show image first on smaller screens? keep below content better */
   .hero__media { order: 0; }
   .services__grid { grid-template-columns: 1fr; }
@@ -391,7 +393,15 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
 
 @media (max-width: 640px) {
   .section { padding: 64px 18px; }
-  .hero { padding: 60px 18px 70px; }
+  .hero { padding: 52px 18px 56px; }
+  .hero__title { font-size: clamp(2.1rem, 9vw, 2.8rem); overflow-wrap: break-word; }
+  .hero__sub { font-size: 1.02rem; }
+  .hero__topline { gap: 10px; }
+  .badge-top { padding: 7px 12px; font-size: .78rem; }
+  .hero__actions { flex-direction: column; gap: 12px; }
+  .hero__actions .btn { width: 100%; justify-content: center; }
+  .topp { gap: 14px; }
+  .hero__img { height: 300px; }
   .nav__links {
     position: fixed; top: 0; right: 0; height: 100vh; width: min(80vw, 340px);
     flex-direction: column; align-items: flex-start; gap: 22px; padding: 90px 28px;
