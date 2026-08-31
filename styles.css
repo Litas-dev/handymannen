@@ -129,15 +129,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
 .hex--4 { top: 78%; right: 10%; animation-delay: 1.4s; }
 .hex--5 { top: 50%; left: 45%; animation-delay: 3s; }
 
-.hero__topline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-.badge-top {
-  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
-  background: var(--red-soft); border: 1px solid rgba(255,58,46,.4); color: var(--red-2);
-  font-weight: 700; font-size: .85rem;
-}
-.badge-top__star { animation: pulse 1.8s ease-in-out infinite; }
-.hero__insta { font-weight: 600; color: var(--muted); }
-
 .hero__title { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 900; margin-bottom: 18px; }
 .hero__title .accent { color: var(--amber-2); position: relative; white-space: nowrap; }
 .hero__title .accent::after {
@@ -391,8 +382,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
   .hero { padding: 52px 18px 56px; }
   .hero__title { font-size: clamp(2.1rem, 9vw, 2.8rem); overflow-wrap: break-word; }
   .hero__sub { font-size: 1.02rem; }
-  .hero__topline { gap: 10px; }
-  .badge-top { padding: 7px 12px; font-size: .78rem; }
   .hero__actions { flex-direction: column; gap: 12px; }
   .hero__actions .btn { width: 100%; justify-content: center; }
   .topp { gap: 14px; }
