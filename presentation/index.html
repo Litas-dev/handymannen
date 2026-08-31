@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handymannen – Presentasjon</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Slides -->
+  <div class="stage" id="stage" aria-live="polite"></div>
+
+  <!-- Overlay / UI -->
+  <div class="ui">
+    <header class="ui__top">
+      <a class="brand" href="#">
+        <img src="../img/handymannen-logo.png" alt="Handymannen" />
+      </a>
+      <div class="ui__top-right">
+        <span class="counter" id="counter">1 / 10</span>
+      </div>
+    </header>
+
+    <button class="nav nav--prev" id="prev" aria-label="Forrige">&#10094;</button>
+    <button class="nav nav--next" id="next" aria-label="Neste">&#10095;</button>
+
+    <div class="ui__bottom">
+      <div class="progress" id="progress"><span class="progress__bar" id="progressBar"></span></div>
+      <div class="controls">
+        <button id="playPause" title="Pause / play" aria-label="Pause eller spill">&#10074;&#10074;</button>
+        <button id="fullscreen" title="Fullskjerm" aria-label="Fullskjerm">&#x26F6;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div class="loader" id="loader"><span class="loader__ring"></span></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
