@@ -1,6 +1,6 @@
-# Handymannen Jocys
+# Handymannen
 
-Nettside for **Handymannen Jocys** – håndverker i Oslo, Viken og Innlandet.
+Nettside for **Handymannen** – håndverker i Oslo, Akershus og Innlandet.
 "*Ingen jobb er for liten.*"
 
 Statisk nettside laget med ren HTML/CSS/JS. Kan kjøres på GitHub Pages.
