@@ -345,6 +345,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
 .footer__links { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; margin-bottom: 20px; }
 .footer__links a:hover { color: var(--red); }
 .footer__copy { font-size: .85rem; color: rgba(255,255,255,.5); }
+.footer__powered { font-size: .8rem; color: rgba(255,255,255,.45); margin-top: 8px; }
+.footer__powered a { color: rgba(255,255,255,.75); text-decoration: none; }
+.footer__powered a:hover { color: var(--cyan); text-decoration: underline; }
 
 /* ============================================================
    SCROLL REVEAL
