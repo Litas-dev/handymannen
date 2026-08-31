@@ -1,0 +1,35 @@
+name: Auto-update gallery
+
+# Runs every time you push to `main`, so the gallery list
+# (gallery-data.js) is regenerated automatically from img/gallery/.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  build-gallery:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Regenerate gallery list
+        run: python3 update-gallery.py
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gallery-data.js
+          if git diff --cached --quiet; then
+            echo "No changes to gallery-data.js"
+          else
+            git commit -m "Auto-update gallery images from img/gallery [skip ci]"
+            git push
+            echo "Pushed updated gallery-data.js"
+          fi
