@@ -26,6 +26,14 @@
     });
   }
 
+  /* ---------- Fill "about" work image with a random gallery photo ---------- */
+  const aboutWork = document.getElementById("aboutWork");
+  if (aboutWork && window.GALLERY_IMAGES && window.GALLERY_IMAGES.length) {
+    const pick = window.GALLERY_IMAGES[Math.floor(Math.random() * window.GALLERY_IMAGES.length)];
+    aboutWork.src = pick;
+    aboutWork.alt = "Bilde av utført arbeid";
+  }
+
   /* ---------- Full-screen image lightbox ---------- */
   function buildLightbox() {
     const images = Array.from(document.querySelectorAll("#galleryGrid .gal img"));

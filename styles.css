@@ -208,6 +208,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.05; color: var
 .about__list li::before { content: "✔"; color: var(--red); font-weight: 700; }
 
 .about__visual { position: relative; }
+.about__work {
+  display: block; width: 100%; min-height: 300px; object-fit: cover;
+  border-radius: 20px; border: 1px solid var(--line); background: var(--card);
+  box-shadow: var(--shadow);
+}
 .placeholder {
   position: relative; display: grid; place-items: center; text-align: center; gap: 8px;
   border: 2px dashed rgba(20,26,46,.25); border-radius: 20px; background: repeating-linear-gradient(45deg, rgba(20,26,46,.03) 0 12px, rgba(20,26,46,0) 12px 24px);
