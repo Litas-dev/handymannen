@@ -9,11 +9,5 @@ window.GALLERY_IMAGES = [
   "img/gallery/7.jpg",
   "img/gallery/IMG_20150824_121128.jpg",
   "img/gallery/IMG_20190418_133929.jpg",
-  "img/gallery/IMG_20190916_131932.jpg",
-  "img/gallery/gal-bad.svg",
-  "img/gallery/gal-kjokken.svg",
-  "img/gallery/gal-tak.svg",
-  "img/gallery/gal-terrasse.svg",
-  "img/gallery/gal-uthus.svg",
-  "img/gallery/gal-vinduer.svg"
+  "img/gallery/IMG_20190916_131932.jpg"
 ];
