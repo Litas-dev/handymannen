@@ -234,35 +234,10 @@
     <div class="section__head" data-reveal="up">
       <span class="eyebrow">Galleri</span>
       <h2>Se resultatene våre</h2>
-      <p><em>Disse er bildeplasser – erstatt dem med egne bilder fra prosjektene dine.</em></p>
+      <p><em>Bildene hentes automatisk fra gallerimappen – legg til flere og de vises her.</em></p>
     </div>
 
-    <div class="gallery__grid">
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-terrasse.svg" alt="Terrasse og platting" loading="lazy" />
-        <figcaption>Terrasse & platting</figcaption>
-      </figure>
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-tak.svg" alt="Nytt tak" loading="lazy" />
-        <figcaption>Nytt tak</figcaption>
-      </figure>
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-kjokken.svg" alt="Kjøkkenmontering" loading="lazy" />
-        <figcaption>Kjøkkenmontering</figcaption>
-      </figure>
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-vinduer.svg" alt="Vinduer og dører" loading="lazy" />
-        <figcaption>Vinduer & dører</figcaption>
-      </figure>
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-bad.svg" alt="Bad og våtrom" loading="lazy" />
-        <figcaption>Bad & våtrom</figcaption>
-      </figure>
-      <figure class="gal" data-reveal="zoom">
-        <img src="img/gal-uthus.svg" alt="Uthus og garasje" loading="lazy" />
-        <figcaption>Uthus & garasje</figcaption>
-      </figure>
-    </div>
+    <div class="gallery__grid" id="galleryGrid"></div>
   </section>
 
   <!-- ===================== OMRÅDER ===================== -->
@@ -447,6 +422,7 @@
     </div>
   </footer>
 
+  <script src="gallery-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

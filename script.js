@@ -8,6 +8,24 @@
   /* ---------- Auto year in footer ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  /* ---------- Photo gallery (auto-filled from gallery-data.js) ---------- */
+  const galleryGrid = document.getElementById("galleryGrid");
+  if (galleryGrid && window.GALLERY_IMAGES) {
+    window.GALLERY_IMAGES.forEach(function (src) {
+      const fig = document.createElement("figure");
+      fig.className = "gal";
+      fig.setAttribute("data-reveal", "zoom");
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Resultat fra prosjekt";
+      img.loading = "lazy";
+      fig.appendChild(img);
+
+      galleryGrid.appendChild(fig);
+    });
+  }
+
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
