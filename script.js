@@ -8,6 +8,26 @@
   /* ---------- Auto year in footer ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  /* ---------- Load editable text from content.json ---------- */
+  fetch("content.json")
+    .then(function (r) { return r.json(); })
+    .then(function (content) {
+      document.querySelectorAll("[data-content]").forEach(function (el) {
+        var key = el.getAttribute("data-content");
+        if (content[key]) el.innerHTML = content[key];
+      });
+      var mTitle = document.querySelector("title");
+      if (content.meta_title) mTitle.textContent = content.meta_title;
+      var mDesc = document.querySelector('meta[name="description"]');
+      if (content.meta_description) mDesc.setAttribute("content", content.meta_description);
+      window.GALLERY_LB_CAPTION = content.gallery_lb_caption || "Resultat fra prosjekt";
+      // Update lightbox captions on gallery thumbnails too.
+      document.querySelectorAll("#galleryGrid .gal img").forEach(function (img) {
+        img.alt = window.GALLERY_LB_CAPTION;
+      });
+    })
+    .catch(function () { /* keep default text if content.json missing */ });
+
   /* ---------- Photo gallery (auto-filled from gallery-data.js) ---------- */
   const galleryGrid = document.getElementById("galleryGrid");
   if (galleryGrid && window.GALLERY_IMAGES) {

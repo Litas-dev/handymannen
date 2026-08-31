@@ -55,11 +55,11 @@
 
     <div class="hero__inner">
       <div class="hero__content" data-reveal="up">
-        <h1 class="hero__title">
+        <h1 class="hero__title" data-content="hero_title">
           Fra <span class="accent">idé</span> til <span class="accent">ferdig</span> prosjekt.
         </h1>
 
-        <p class="hero__sub">
+        <p class="hero__sub" data-content="hero_sub">
           Handymannen er din pålitelige håndverker i
           <strong>Oslo</strong>, <strong>Akershus</strong> og <strong>Innlandet</strong> – med over
           <strong>108 utførte jobber</strong> og en snittscore på <strong>4.8 av 5</strong>.
@@ -110,59 +110,59 @@
   <section class="stats" id="stats">
     <div class="stats__item" data-reveal="up">
       <strong class="count" data-count="108">0</strong>
-      <span>Jobber utført</span>
+      <span data-content="stat_jobs_label">Jobber utført</span>
     </div>
     <div class="stats__item" data-reveal="up">
       <strong class="count" data-count="4.8" data-decimal="1">0</strong>
-      <span>Snittscore (5)</span>
+      <span data-content="stat_score_label">Snittscore (5)</span>
     </div>
     <div class="stats__item" data-reveal="up">
       <strong class="count" data-count="78">0</strong>
-      <span>Evalueringer</span>
+      <span data-content="stat_evals_label">Evalueringer</span>
     </div>
     <div class="stats__item" data-reveal="up">
       <strong class="count" data-count="11">0</strong>
-      <span>Referanseprosjekter</span>
+      <span data-content="stat_refs_label">Referanseprosjekter</span>
     </div>
   </section>
 
   <!-- ===================== OM ===================== -->
   <section class="section about" id="om">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Om oss</span>
-      <h2>Håndverk med omtanke, fra start til slutt</h2>
+      <span class="eyebrow" data-content="about_eyebrow">Om oss</span>
+      <h2 data-content="about_heading">Håndverk med omtanke, fra start til slutt</h2>
     </div>
 
     <div class="about__grid">
       <div class="about__text" data-reveal="right">
-        <p>
+        <p data-content="about_p1">
           <strong>Handymannen</strong> er en erfaren og topprangert håndverker som har
           utført <strong>108 jobber</strong> gjennom Mittanbud – med en imponerende snittscore på
           <strong>4.8 av 5 stjerner</strong>. Vi tar oss av alt fra små monteringsoppdrag til
           større renoveringer.
         </p>
-        <p>
+        <p data-content="about_p2">
           Med base i <strong>Kløfta</strong> og <strong>@handyoslo</strong> på Instagram, dekker vi
           hele Oslo-regionen, Akershus og store deler av Innlandet. Kundene våre beskriver oss som
           <em>hyggelige, pålitelige og dyktige</em> håndverkere.
         </p>
 
         <ul class="about__list">
-          <li>✔ Kvalitetssikret arbeid til avtalt tid</li>
-          <li>✔ God kommunikasjon og god kundeservice</li>
-          <li>✔ Bred erfaring – fra tak til kjøkken</li>
-          <li>✔ Topprangert på Mittanbud</li>
+          <li data-content="about_li1">✔ Kvalitetssikret arbeid til avtalt tid</li>
+          <li data-content="about_li2">✔ God kommunikasjon og god kundeservice</li>
+          <li data-content="about_li3">✔ Bred erfaring – fra tak til kjøkken</li>
+          <li data-content="about_li4">✔ Topprangert på Mittanbud</li>
         </ul>
 
-        <a href="#kontakt" class="btn btn--primary">Kom i kontakt</a>
+        <a href="#kontakt" class="btn btn--primary" data-content="about_cta">Kom i kontakt</a>
       </div>
 
       <div class="about__visual" data-reveal="left">
         <!-- Bilde av arbeid – fylles automatisk med et tilfeldig galleri-bilde -->
         <img class="about__work" id="aboutWork" src="" alt="Bilde av utført arbeid" />
         <div class="about__badge">
-          <span class="about__badge-num">4.8★</span>
-          <span>Topprangert<br />på Mittanbud</span>
+          <span class="about__badge-num" data-content="about_badge_num">4.8★</span>
+          <span data-content="about_badge_text">Topprangert<br />på Mittanbud</span>
         </div>
       </div>
     </div>
@@ -171,50 +171,50 @@
   <!-- ===================== TJENESTER ===================== -->
   <section class="section services" id="tjenester">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Tjenester</span>
-      <h2>Hva vi kan hjelpe deg med</h2>
-      <p>Fra oppussing til snekkerarbeid – vi hjelper deg med hele prosjektet.</p>
+      <span class="eyebrow" data-content="services_eyebrow">Tjenester</span>
+      <h2 data-content="services_heading">Hva vi kan hjelpe deg med</h2>
+      <p data-content="services_sub">Fra oppussing til snekkerarbeid – vi hjelper deg med hele prosjektet.</p>
     </div>
 
     <div class="services__grid">
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Oppussing</h3>
-        <p class="svc-card__desc">Alt innen generell oppussing – fra planlegging til ferdig resultat.</p>
+        <h3 class="svc-card__title" data-content="svc1_title">Oppussing</h3>
+        <p class="svc-card__desc" data-content="svc1_desc">Alt innen generell oppussing – fra planlegging til ferdig resultat.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Snekkerarbeid</h3>
-        <p class="svc-card__desc">Solid utført snekkerarbeid i tre, med presisjon og godt håndverk.</p>
+        <h3 class="svc-card__title" data-content="svc2_title">Snekkerarbeid</h3>
+        <p class="svc-card__desc" data-content="svc2_desc">Solid utført snekkerarbeid i tre, med presisjon og godt håndverk.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Bad</h3>
-        <p class="svc-card__desc">Oppussing og utbedring av bad og våtrom – fra flis til ferdig rom.</p>
+        <h3 class="svc-card__title" data-content="svc3_title">Bad</h3>
+        <p class="svc-card__desc" data-content="svc3_desc">Oppussing og utbedring av bad og våtrom – fra flis til ferdig rom.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Kjøkken</h3>
-        <p class="svc-card__desc">Montering og oppussing av kjøkken, skreddersydd etter ditt behov.</p>
+        <h3 class="svc-card__title" data-content="svc4_title">Kjøkken</h3>
+        <p class="svc-card__desc" data-content="svc4_desc">Montering og oppussing av kjøkken, skreddersydd etter ditt behov.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Flis</h3>
-        <p class="svc-card__desc">Flislegging på bad, kjøkken og andre flater – pent og holdbart.</p>
+        <h3 class="svc-card__title" data-content="svc5_title">Flis</h3>
+        <p class="svc-card__desc" data-content="svc5_desc">Flislegging på bad, kjøkken og andre flater – pent og holdbart.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Maling</h3>
-        <p class="svc-card__desc">Maling innvendig og utvendig, med rene kanter og jevnt resultat.</p>
+        <h3 class="svc-card__title" data-content="svc6_title">Maling</h3>
+        <p class="svc-card__desc" data-content="svc6_desc">Maling innvendig og utvendig, med rene kanter og jevnt resultat.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Terrasser</h3>
-        <p class="svc-card__desc">Bygging og utbedring av terrasser og plattinger for uteområdet ditt.</p>
+        <h3 class="svc-card__title" data-content="svc7_title">Terrasser</h3>
+        <p class="svc-card__desc" data-content="svc7_desc">Bygging og utbedring av terrasser og plattinger for uteområdet ditt.</p>
       </article>
 
       <article class="svc-card" data-reveal="up">
-        <h3 class="svc-card__title">Reparasjon & utbedring</h3>
-        <p class="svc-card__desc">Reparasjoner og utbedringer – vi reparerer det som er ødelagt og forebygger større skader.</p>
+        <h3 class="svc-card__title" data-content="svc8_title">Reparasjon & utbedring</h3>
+        <p class="svc-card__desc" data-content="svc8_desc">Reparasjoner og utbedringer – vi reparerer det som er ødelagt og forebygger større skader.</p>
       </article>
     </div>
   </section>
@@ -222,9 +222,9 @@
   <!-- ===================== GALLERI ===================== -->
   <section class="section gallery" id="galleri">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Galleri</span>
-      <h2>Se resultatene våre</h2>
-      <p><em>Bildene hentes automatisk fra gallerimappen – legg til flere og de vises her.</em></p>
+      <span class="eyebrow" data-content="gallery_eyebrow">Galleri</span>
+      <h2 data-content="gallery_heading">Se resultatene våre</h2>
+      <p data-content="gallery_sub"><em>Bildene hentes automatisk fra gallerimappen – legg til flere og de vises her.</em></p>
     </div>
 
     <div class="gallery__grid" id="galleryGrid"></div>
@@ -233,9 +233,9 @@
   <!-- ===================== OMRÅDER ===================== -->
   <section class="section areas" id="omrader">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Områder</span>
-      <h2>Områder vi dekker</h2>
-      <p>Vi utfører oppdrag i Oslo, Akershus og store deler av Innlandet.</p>
+      <span class="eyebrow" data-content="areas_eyebrow">Områder</span>
+      <h2 data-content="areas_heading">Områder vi dekker</h2>
+      <p data-content="areas_sub">Vi utfører oppdrag i Oslo, Akershus og store deler av Innlandet.</p>
     </div>
 
     <div class="areas__marquee" aria-hidden="true">
@@ -269,14 +269,14 @@
       </div>
     </div>
 
-    <p class="areas__more" data-reveal="up">…og mange flere kommuner i Innlandet.</p>
+    <p class="areas__more" data-reveal="up" data-content="areas_more">…og mange flere kommuner i Innlandet.</p>
   </section>
 
   <!-- ===================== ANMELDELSER ===================== -->
   <section class="section reviews" id="anmeldelser">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Anmeldelser</span>
-      <h2>Det sier kundene våre</h2>
+      <span class="eyebrow" data-content="reviews_eyebrow">Anmeldelser</span>
+      <h2 data-content="reviews_heading">Det sier kundene våre</h2>
     </div>
 
     <div class="reviews__grid">
@@ -285,7 +285,7 @@
         <div class="rev-sum__score">
           <strong>4.8</strong>
           <span class="stars stars--lg"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
-          <small>78 evalueringer</small>
+          <small data-content="rev_sum_note">78 evalueringer</small>
         </div>
         <div class="rev-bars">
           <div class="bar"><span class="bar__lbl">5</span><span class="bar__trk"><i style="--w:88%"></i></span><span class="bar__n">69</span></div>
@@ -302,39 +302,39 @@
           <div class="rev__head">
             <span class="rev__avatar">E</span>
             <div>
-              <strong>Ellen</strong>
+              <strong data-content="rev1_name">Ellen</strong>
               <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
             </div>
-            <small>21. juli 2026</small>
+            <small data-content="rev1_date">21. juli 2026</small>
           </div>
-          <h4>Flytte kjøkken og bygge lettvegg</h4>
-          <p>“Veldig effektivt, kvalitetssikkert arbeid, god kundeservice og god kommunikasjon. Anbefaler alle denne håndverkeren!”</p>
+          <h4 data-content="rev1_title">Flytte kjøkken og bygge lettvegg</h4>
+          <p data-content="rev1_text">“Veldig effektivt, kvalitetssikkert arbeid, god kundeservice og god kommunikasjon. Anbefaler alle denne håndverkeren!”</p>
         </article>
 
         <article class="rev" data-reveal="right">
           <div class="rev__head">
             <span class="rev__avatar">L</span>
             <div>
-              <strong>Lars</strong>
+              <strong data-content="rev2_name">Lars</strong>
               <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
             </div>
-            <small>25. juni 2026</small>
+            <small data-content="rev2_date">25. juni 2026</small>
           </div>
-          <h4>Montering av rekkverk i tre</h4>
-          <p>“Veldig god kvalitet og raskt utført oppdrag.”</p>
+          <h4 data-content="rev2_title">Montering av rekkverk i tre</h4>
+          <p data-content="rev2_text">“Veldig god kvalitet og raskt utført oppdrag.”</p>
         </article>
 
         <article class="rev" data-reveal="right">
           <div class="rev__head">
             <span class="rev__avatar">M</span>
             <div>
-              <strong>Mehdi</strong>
+              <strong data-content="rev3_name">Mehdi</strong>
               <span class="stars stars--sm"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
             </div>
-            <small>1. august 2026</small>
+            <small data-content="rev3_date">1. august 2026</small>
           </div>
-          <h4>Montering av dusjdører</h4>
-          <p>“Profesjonell og rask utførelse – alt ble gjort som avtalt.”</p>
+          <h4 data-content="rev3_title">Montering av dusjdører</h4>
+          <p data-content="rev3_text">“Profesjonell og rask utførelse – alt ble gjort som avtalt.”</p>
         </article>
       </div>
     </div>
@@ -343,54 +343,54 @@
   <!-- ===================== KONTAKT ===================== -->
   <section class="section contact" id="kontakt">
     <div class="section__head" data-reveal="up">
-      <span class="eyebrow">Kontakt</span>
-      <h2>Be om tilbud – helt uforpliktende</h2>
-      <p>Send en e-post direkte – vi svarer raskt.</p>
+      <span class="eyebrow" data-content="contact_eyebrow">Kontakt</span>
+      <h2 data-content="contact_heading">Be om tilbud – helt uforpliktende</h2>
+      <p data-content="contact_sub">Send en e-post direkte – vi svarer raskt.</p>
     </div>
 
     <div class="contact__grid">
       <div class="contact__card" data-reveal="up">
-        <h3>Kontaktinfo</h3>
+        <h3 data-content="contact_info_title">Kontaktinfo</h3>
         <ul class="contact__list">
           <li>
             <span class="contact__icon">✉️</span>
-            <div><strong>E-post</strong><a href="mailto:a.jocys@yahoo.com">a.jocys@yahoo.com</a></div>
+            <div><strong data-content="contact_email_label">E-post</strong><a href="mailto:a.jocys@yahoo.com" data-content="contact_email_value">a.jocys@yahoo.com</a></div>
           </li>
           <li>
             <span class="contact__icon">📞</span>
-            <div><strong>Telefon</strong><a href="tel:+4746374477">+47 46 37 44 77</a></div>
+            <div><strong data-content="contact_phone_label">Telefon</strong><a href="tel:+4746374477" data-content="contact_phone_value">+47 46 37 44 77</a></div>
           </li>
           <li>
             <span class="contact__icon">📷</span>
-            <div><strong>Instagram</strong><a href="https://instagram.com/handyoslo" target="_blank" rel="noopener">@handyoslo</a></div>
+            <div><strong data-content="contact_insta_label">Instagram</strong><a href="https://instagram.com/handyoslo" target="_blank" rel="noopener" data-content="contact_insta_value">@handyoslo</a></div>
           </li>
           <li>
             <span class="contact__icon">📍</span>
-            <div><strong>Adresse</strong><span>Tveiterhellinga 1, 2040 Kløfta</span></div>
+            <div><strong data-content="contact_addr_label">Adresse</strong><span data-content="contact_addr_value">Tveiterhellinga 1, 2040 Kløfta</span></div>
           </li>
           <li>
             <span class="contact__icon">🏢</span>
-            <div><strong>Org. nr.</strong><span>921 358 172</span></div>
+            <div><strong data-content="contact_org_label">Org. nr.</strong><span data-content="contact_org_value">921 358 172</span></div>
           </li>
         </ul>
         <div class="contact__hint">
           <span class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></span>
-          <span>Topprangert på Mittanbud – 4.8 av 5</span>
+          <span data-content="contact_hint">Topprangert på Mittanbud – 4.8 av 5</span>
         </div>
       </div>
 
       <!-- E-post – åpner e-postklienten direkte (mailto) -->
       <div class="contact__form" data-reveal="up" id="emailCard">
         <div class="email__ico" aria-hidden="true">✉️</div>
-        <h3>Send oss en e-post</h3>
-        <p class="email__lead">
+        <h3 data-content="emailcard_heading">Send oss en e-post</h3>
+        <p class="email__lead" data-content="emailcard_lead">
           Trykk på knappen nedenfor – da åpnes e-postklienten din med riktig adresse
           ferdig utfylt. Ingen skjema, ingen venting.
         </p>
-        <a href="mailto:a.jocys@yahoo.com?subject=Be%20om%20tilbud%20%E2%80%93%20Handymannen" class="btn btn--primary btn--block">
+        <a href="mailto:a.jocys@yahoo.com?subject=Be%20om%20tilbud%20%E2%80%93%20Handymannen" class="btn btn--primary btn--block" data-content="emailcard_btn">
           ✉️ a.jocys@yahoo.com
         </a>
-        <p class="form__note">Du kan også kopiere adressen: a.jocys@yahoo.com</p>
+        <p class="form__note" data-content="emailcard_note">Du kan også kopiere adressen: a.jocys@yahoo.com</p>
       </div>
     </div>
   </section>
@@ -408,7 +408,7 @@
         <a href="#anmeldelser">Anmeldelser</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
-      <p class="footer__copy">© <span id="year"></span> Handymannen · Org. nr. 921 358 172</p>
+      <p class="footer__copy">© <span id="year"></span> <span data-content="footer_copy">Handymannen · Org. nr. 921 358 172</span></p>
     </div>
   </footer>
 

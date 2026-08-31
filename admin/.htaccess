@@ -1,0 +1,10 @@
+# Protect the admin password hash file from being downloaded
+<Files "config.php">
+  Require all denied
+</Files>
+
+# Optional: block direct access to any .php in this folder except index.php.
+# (Some hosts need this off, so it's commented out.)
+# <FilesMatch "^(config)\.php$">
+#   Require all denied
+# </FilesMatch>

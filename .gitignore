@@ -1,0 +1,5 @@
+# Never commit the real admin password hash (it is created on the server)
+admin/config.php
+
+# OS files
+.DS_Store
