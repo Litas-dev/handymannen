@@ -348,6 +348,15 @@ html, body {
 .ui:hover .controls button { opacity: 1; }
 .controls button:hover { background: #01c1ee; color: #04303c; }
 
+/* Pseudo-fullscreen fallback for old webOS browsers that have no fullscreen API.
+   Hides the chrome (brand, counter, arrows, progress) for a clean view; a single
+   toggle restores it. Native fullscreen targets leave this untouched. */
+body.pseudo-fs .ui__top,
+body.pseudo-fs .nav,
+body.pseudo-fs .progress { visibility: hidden; }
+body.pseudo-fs .ui__bottom { padding: 0 34px 20px; }
+body.pseudo-fs .controls button { opacity: 1; }
+
 /* ===== Loader ===== */
 .loader {
   position: fixed;

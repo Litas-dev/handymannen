@@ -280,11 +280,17 @@ var SLIDES = [
 
   function goFullscreen() {
     var d = document.documentElement;
-    if (!document.fullscreenElement) {
-      (d.requestFullscreen || d.webkitRequestFullscreen || d.msRequestFullscreen).call(d);
-    } else {
-      (document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen).call(document);
-    }
+    // Detect the fullscreen state across all vendor prefixes.
+    var fsEl = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+    var request = d.requestFullscreen || d.webkitRequestFullscreen || d.msRequestFullscreen;
+    var exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+
+    if (fsEl && exit) { exit.call(document); return; }        // already fullscreen -> leave
+    if (request)      { request.call(d); return; }            // enter native fullscreen
+
+    // No fullscreen API on this browser (e.g. old webOS): fall back to a clean
+    // pseudo-fullscreen that hides the UI chrome. Toggling the class restores it.
+    document.body.classList.toggle("pseudo-fs");
   }
 
   /* Nav wiring */
