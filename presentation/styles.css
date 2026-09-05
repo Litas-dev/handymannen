@@ -99,7 +99,6 @@ html, body {
 .slide__kicker {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   font-size: 1.05rem;
   font-size: clamp(.8rem, 1.4vw, 1.05rem);
   font-weight: 600;
@@ -117,6 +116,7 @@ html, body {
   width: 42px;
   height: 2px;
   background: #01c1ee;
+  margin-right: 12px; /* old webOS has no flex `gap` */
 }
 
 .slide__align--center .slide__kicker::before,
@@ -176,8 +176,7 @@ html, body {
 .slide__list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
-  margin-top: 6px;
+  margin-top: 6px; /* old webOS has no flex `gap` */
   opacity: 0;
   -webkit-transform: translateY(26px);
  transform: translateY(26px);
@@ -187,6 +186,7 @@ html, body {
 
 .slide__chip {
   padding: 12px 20px;
+  margin: 0 14px 10px 0; /* old webOS has no flex `gap` */
   border-radius: 999px;
   background: rgba(255, 255, 255, .08);
   border: 1px solid rgba(255, 255, 255, .22);
@@ -328,7 +328,6 @@ html, body {
 .controls {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
 }
 .controls button {
   width: 42px;
@@ -345,6 +344,7 @@ html, body {
   pointer-events: auto;
   backdrop-filter: blur(6px);
 }
+.controls button + button { margin-left: 10px; } /* old webOS has no flex `gap` */
 .ui:hover .controls button { opacity: 1; }
 .controls button:hover { background: #01c1ee; color: #04303c; }
 
