@@ -97,13 +97,16 @@ var SLIDES = [
   var counterEl = document.getElementById("counter");
   var progressBar = document.getElementById("progressBar");
   var autoDelay = 8000;   // ms per slide when playing
-  var qs = new URLSearchParams(location.search);
+  // Simple query-string helper (old webOS browsers have no URLSearchParams).
+  function getParam(name) {
+    var m = location.search.match(new RegExp("[?&]" + name + "=([^&]*)"));
+    return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : "";
+  }
   var total = SLIDES.length;
-  var playing = qs.get("pause") !== "1";
-  var current = Math.max(0, Math.min(total - 1, parseInt(qs.get("start") || "0", 10) || 0));
+  var playing = getParam("pause") !== "1";
+  var current = Math.max(0, Math.min(total - 1, parseInt(getParam("start") || "0", 10) || 0));
   var timer = null;
   var progressTimer = null;
-  var preloaded = 0;
 
   function esc(s) {
     return String(s)
@@ -188,20 +191,43 @@ var SLIDES = [
   function head(t) { var e = document.createElement("h2"); e.className = "slide__title"; e.innerHTML = t; return e; }
   function para(t) { var e = document.createElement("p"); e.className = "slide__text"; e.innerHTML = esc(t); return e; }
 
-  /* Preload images so no flash on big screens */
+  /* Preload images so no flash on big screens.
+     Reveal the FIRST slide as soon as its own image is ready (old TV browsers
+     are slow / low-memory — don't make them wait for every frame). */
   function preload() {
     var imgs = [];
     SLIDES.forEach(function (s) { imgs.push(s.image); if (s.logo) imgs.push(s.logo); });
-    imgs.forEach(function (src) {
+
+    var priority = SLIDES[current];
+    var prioritySrcs = [];
+    if (priority && priority.image) prioritySrcs.push(priority.image);
+    if (priority && priority.logo) prioritySrcs.push(priority.logo);
+
+    var shown = false;
+    function reveal() {
+      if (shown) return;
+      shown = true;
+      loader.className = "loader is-hidden";
+      show(current);
+    }
+
+    function load(src, cb) {
       var img = new Image();
-      img.onload = img.onerror = function () {
-        preloaded++;
-        if (preloaded === imgs.length) {
-          loader.className = "loader is-hidden";
-          show(current);
-        }
-      };
+      img.onload = img.onerror = cb;
       img.src = src;
+    }
+
+    // Load the current slide's image first, then reveal.
+    prioritySrcs.forEach(function (src) { load(src, reveal); });
+    if (!prioritySrcs.length) reveal();
+
+    // Silently preload the rest (smooth transitions) without blocking the first slide.
+    imgs.forEach(function (src) {
+      var isPriority = false;
+      for (var p = 0; p < prioritySrcs.length; p++) {
+        if (prioritySrcs[p] === src) { isPriority = true; break; }
+      }
+      if (!isPriority) load(src, function () {});
     });
   }
 

@@ -5,11 +5,31 @@
 (function () {
   "use strict";
 
+  /* ---------- Compatibility: old webOS TV browsers have no IntersectionObserver ----------
+     Simulate it so reveal animations, counters and rating bars fire immediately
+     instead of staying hidden forever on old TV browsers. */
+  if (!("IntersectionObserver" in window)) {
+    window.IntersectionObserver = function (cb) {
+      this.observe = function (el) { cb([{ isIntersecting: true, target: el }], this); };
+      this.unobserve = function () {};
+      this.disconnect = function () {};
+    };
+  }
+
+  /* ---------- Compatibility: old webOS has no NodeList.forEach ---------- */
+  if (typeof NodeList !== "undefined" && !NodeList.prototype.forEach) {
+    NodeList.prototype.forEach = Array.prototype.forEach;
+  }
+  if (typeof HTMLCollection !== "undefined" && !HTMLCollection.prototype.forEach) {
+    HTMLCollection.prototype.forEach = Array.prototype.forEach;
+  }
+
   /* ---------- Auto year in footer ---------- */
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /* ---------- Load editable text from content.json ---------- */
-  fetch("content.json")
+  if (typeof fetch === "function") {
+    fetch("content.json")
     .then(function (r) { return r.json(); })
     .then(function (content) {
       document.querySelectorAll("[data-content]").forEach(function (el) {
@@ -27,16 +47,17 @@
       });
     })
     .catch(function () { /* keep default text if content.json missing */ });
+  }
 
   /* ---------- Photo gallery (auto-filled from gallery-data.js) ---------- */
-  const galleryGrid = document.getElementById("galleryGrid");
+  var galleryGrid = document.getElementById("galleryGrid");
   if (galleryGrid && window.GALLERY_IMAGES) {
     window.GALLERY_IMAGES.forEach(function (src) {
-      const fig = document.createElement("figure");
+      var fig = document.createElement("figure");
       fig.className = "gal";
       fig.setAttribute("data-reveal", "zoom");
 
-      const img = document.createElement("img");
+      var img = document.createElement("img");
       img.src = src;
       img.alt = "Resultat fra prosjekt";
       img.loading = "lazy";
@@ -47,20 +68,20 @@
   }
 
   /* ---------- Fill "about" work image with a random gallery photo ---------- */
-  const aboutWork = document.getElementById("aboutWork");
+  var aboutWork = document.getElementById("aboutWork");
   if (aboutWork && window.GALLERY_IMAGES && window.GALLERY_IMAGES.length) {
-    const pick = window.GALLERY_IMAGES[Math.floor(Math.random() * window.GALLERY_IMAGES.length)];
+    var pick = window.GALLERY_IMAGES[Math.floor(Math.random() * window.GALLERY_IMAGES.length)];
     aboutWork.src = pick;
     aboutWork.alt = "Bilde av utført arbeid";
   }
 
   /* ---------- Full-screen image lightbox ---------- */
   function buildLightbox() {
-    const images = Array.from(document.querySelectorAll("#galleryGrid .gal img"));
+    var images = [].slice.call(document.querySelectorAll("#galleryGrid .gal img"));
     if (!images.length) return;
 
     // Lightbox structure
-    const box = document.createElement("div");
+    var box = document.createElement("div");
     box.className = "lightbox";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-label", "Bildevisning");
@@ -77,15 +98,15 @@
 
     document.body.appendChild(box);
 
-    const imgEl = box.querySelector(".lb__img");
-    const capEl = box.querySelector(".lb__cap");
-    const countEl = box.querySelector(".lb__count");
-    let index = 0;
+    var imgEl = box.querySelector(".lb__img");
+    var capEl = box.querySelector(".lb__cap");
+    var countEl = box.querySelector(".lb__count");
+    var index = 0;
 
     function show(i) {
       index = (i + images.length) % images.length;
-      const src = images[index].src;
-      const cap = images[index].getAttribute("alt") || "";
+      var src = images[index].src;
+      var cap = images[index].getAttribute("alt") || "";
       imgEl.src = src;
       imgEl.alt = cap;
       capEl.textContent = cap;
@@ -127,10 +148,10 @@
     });
 
     // Touch / swipe support
-    let startX = 0;
+    var startX = 0;
     box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
     box.addEventListener("touchend", function (e) {
-      const dx = e.changedTouches[0].clientX - startX;
+      var dx = e.changedTouches[0].clientX - startX;
       if (Math.abs(dx) > 40) show(index + (dx < 0 ? 1 : -1));
     }, { passive: true });
   }
@@ -140,8 +161,8 @@
   }
 
   /* ---------- Mobile nav toggle ---------- */
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.getElementById("navLinks");
+  var navToggle = document.getElementById("navToggle");
+  var navLinks = document.getElementById("navLinks");
 
   function closeNav() {
     navLinks.classList.remove("is-open");
@@ -151,7 +172,7 @@
   }
 
   navToggle.addEventListener("click", function () {
-    const open = navLinks.classList.toggle("is-open");
+    var open = navLinks.classList.toggle("is-open");
     navToggle.classList.toggle("is-open", open);
     navToggle.setAttribute("aria-expanded", String(open));
     document.body.style.overflow = open ? "hidden" : "";
@@ -177,14 +198,14 @@
   });
 
   /* ---------- Scroll reveal (IntersectionObserver) ---------- */
-  const revealEls = document.querySelectorAll("[data-reveal]");
+  var revealEls = document.querySelectorAll("[data-reveal]");
   revealEls.forEach(function (el) {
     // Slight stagger based on sibling index within a group
-    const idx = Array.from(el.parentElement.children).indexOf(el);
+    var idx = [].slice.call(el.parentElement.children).indexOf(el);
     el.style.transitionDelay = (idx % 4) * 90 + "ms";
   });
 
-  const revealObserver = new IntersectionObserver(
+  var revealObserver = new IntersectionObserver(
     function (entries, obs) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -200,15 +221,15 @@
 
   /* ---------- Animated counters ---------- */
   function animateCount(el) {
-    const target = parseFloat(el.getAttribute("data-count"));
-    const decimals = parseInt(el.getAttribute("data-decimal") || "0", 10);
-    const duration = 1600;
-    const start = performance.now();
+    var target = parseFloat(el.getAttribute("data-count"));
+    var decimals = parseInt(el.getAttribute("data-decimal") || "0", 10);
+    var duration = 1600;
+    var start = performance.now();
 
     function tick(now) {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-      const value = target * eased;
+      var p = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+      var value = target * eased;
       el.textContent = decimals > 0
         ? value.toFixed(decimals).replace(".", ",")
         : Math.round(value).toLocaleString("nb-NO");
@@ -217,8 +238,8 @@
     requestAnimationFrame(tick);
   }
 
-  const counters = document.querySelectorAll(".count");
-  const countObserver = new IntersectionObserver(
+  var counters = document.querySelectorAll(".count");
+  var countObserver = new IntersectionObserver(
     function (entries, obs) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -232,8 +253,8 @@
   counters.forEach(function (c) { countObserver.observe(c); });
 
   /* ---------- Rating bars animate fill when visible ---------- */
-  const bars = document.querySelectorAll(".bar__trk i");
-  const barObserver = new IntersectionObserver(
+  var bars = document.querySelectorAll(".bar__trk i");
+  var barObserver = new IntersectionObserver(
     function (entries, obs) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -246,14 +267,14 @@
   );
   // Reset bars to 0 so the animation plays on reveal
   bars.forEach(function (b) {
-    const w = b.getAttribute("style").match(/--w:\s*([\d.]+)%/)[1];
+    var w = b.getAttribute("style").match(/--w:\s*([\d.]+)%/)[1];
     b.style.width = "0%";
     b.dataset.w = w;
     barObserver.observe(b);
   });
 
   /* ---------- Sticky nav shadow on scroll ---------- */
-  const nav = document.getElementById("nav");
+  var nav = document.getElementById("nav");
   window.addEventListener("scroll", function () {
     if (window.scrollY > 10) {
       nav.style.boxShadow = "0 6px 30px rgba(20,26,46,.08)";
